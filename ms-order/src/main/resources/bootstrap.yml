@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+        shared-configs:
+          - common-dev.yml
+  application:
+    name: order-center
+  profiles:
+    active: dev
