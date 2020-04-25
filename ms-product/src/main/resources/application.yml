@@ -6,4 +6,4 @@ spring:
   application:
     name: product-center
 server:
-  port: 8081
+  port: 8083

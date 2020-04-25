@@ -31,6 +31,7 @@ public class TestController {
 
     @RequestMapping("getProductById/{productNo}")
     public ProductVO getProductById(@PathVariable("productNo") String productNo) {
+        System.out.println("!!!");
         return getProductVO(productNo);
     }
 
