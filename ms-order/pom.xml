@@ -5,7 +5,7 @@
     <parent>
         <artifactId>microservice-ali</artifactId>
         <groupId>com.plh</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -27,7 +27,33 @@
         <dependency>
             <artifactId>ms-common</artifactId>
             <groupId>com.plh</groupId>
-            <version>${project.version}</version>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <artifactId>ms-feign-api</artifactId>
+            <groupId>com.plh</groupId>
+            <version>${revision}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.csp</groupId>-->
+            <!--<artifactId>sentinel-core</artifactId>-->
+            <!--<version>1.7.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba.csp</groupId>-->
+            <!--<artifactId>sentinel-annotation-aspectj</artifactId>-->
+            <!--<version>1.7.1</version>-->
+        <!--</dependency>-->
+
+        <!--加入sentinel-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <!--加入actuator-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 </project>

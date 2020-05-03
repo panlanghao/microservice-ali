@@ -7,6 +7,7 @@
         <module>ms-product</module>
         <module>ms-order</module>
         <module>ms-common</module>
+        <module>ms-feign-api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -16,11 +17,12 @@
     </parent>
     <groupId>com.plh</groupId>
     <artifactId>microservice-ali</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>microservice-ali</name>
     <description>Demo project for Spring Cloud Alibaba</description>
 
     <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>

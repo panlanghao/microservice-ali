@@ -6,7 +6,45 @@ spring:
         file-extension: yml
         shared-configs:
           - common-dev.yml
+    sentinel:
+      transport:
+        dashboard: localhost:8080
   application:
     name: order-center
   profiles:
     active: dev
+logging:
+  level:
+    com:
+      plh:
+        microservice:
+          ali:
+            feign:
+              api: debug
+feign:
+  client:
+    config:
+      product-center:
+        loggerLevel: full
+      # 以Feign配置的超时为准，ribbon的会给覆盖（Feign的底层用的是Ribbon）
+      default:
+        connectTimeout: 5000
+        readTimeout: 3000
+  #让feign底层使用HttpClient去调用
+  httpclient:
+    enabled: true
+    # 最大连接数
+    max-connections: 200
+    # 为每个url请求设置最大连接数
+    max-connections-per-route: 50
+#ribbon:
+#  connectTimeout: 1000
+#  readTimeout: 1000
+
+#添加Sentinel后，会暴露/actuator/sentinel端点http://localhost:8080/actuator/sentinel
+#而Springboot默认是没有暴露该端点的，所以我们需要自己设置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
